@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="themes/default/header::header(title='Link',keywords=null)"></div>
+<body>
+<article class="main-content post-page">
+    <div id="post-content" class="post-content">
+        <h3>Link</h3>
+        <ul class="flinks">
+            <th:block th:each="link : ${links}">
+                <li>🔒 <a th:href="${link.slug}" target="_blank" th:text="${link.name}"></a></li>
+            </th:block>
+        </ul>
+        <h3>Basic Information</h3>
+        <pre><code class="lang-md hljs markdown">
+            Name: Hao's blog
+            Address: test</code></pre>
+
+        <p>My email: awww797877@gmail.com</p>
+    </div>
+</article>
+</body>
+<div th:replace="themes/default/footer::footer"></div>
+</html>
